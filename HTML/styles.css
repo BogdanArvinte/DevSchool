@@ -1,0 +1,43 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* background-image: url('./viktor-juric-1127716-unsplash.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+nav ul {
+  padding: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 8px;
+  background-color: #A1020C;
+  color: #fff;
+  border-radius: 4px;
+}
+
+h1 {
+  text-align: center;
+}
+
+main,
+footer,
+aside {
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+footer {
+  text-align: center;
+}
+
+::selection {
+  background: #f00;
+  color: #fff;
+}
