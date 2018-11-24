@@ -1,0 +1,21 @@
+{
+  "name": "jsfunc",
+  "description": "Functional JS",
+  "main": "index.js",
+  "authors": [
+    "me"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "js",
+    "functional"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

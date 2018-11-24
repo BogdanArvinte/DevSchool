@@ -1,0 +1,37 @@
+{
+  "name": "jsfunc",
+  "version": "1.0.0",
+  "description": "Functional JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "test:e2e": "testcafe chrome ./test/e2e.js",
+    "dev": "live-server --port=9000 .",
+    "build": "gulp"
+  },
+  "keywords": [
+    "js",
+    "functional"
+  ],
+  "author": "me",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "del": "^3.0.0",
+    "eslint": "^5.9.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify-es": "^1.0.4",
+    "live-server": "^1.2.0",
+    "mocha": "^5.2.0",
+    "run-sequence": "^2.2.1",
+    "sinon": "^7.1.1",
+    "testcafe": "^0.23.2"
+  }
+}
