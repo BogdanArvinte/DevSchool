@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  background-color: orange;
+  overflow: hidden;
+  position: relative;
+}
+
+.col {
+  width: 25%;
+  float: left;
+  height: 100px;
+  text-align: center;
+  border-width: 1rem;
+  padding: 10rem;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  background: none;
+  border: none;
+  flex-flow: row wrap;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.flex-item {
+  flex: 0 1 auto;
+  width: 25%;
+  height: 100px;
+  padding: 1rem;
+  border: none;
+  box-sizing: border-box;
+  border: 15px solid;
+}
+
+.double {
+  flex: 1 1 50%;
+  order: -1;
+  background-color: red;
+}
+
+video {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  font-size: 10rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: #fff;
+}
+
+.container {
+  max-height: 200px;
+  overflow: auto;
+  display: none;
+}
+
+p {
+    color: hsl(161, 54%, 40%);
+    padding: 10px 15px 20px 25px;
+    border-left: 10px solid;
+    border-left-style: groove;
+    text-transform: uppercase;
+    text-indent: 32px;
+    letter-spacing: 10px;
+    direction: rtl;
+    text-shadow: 2px 2px beige;
+}
+
+div {
+  border: 1px solid;
+  color: white;
+  background-color: #FF8300;
+  border-color: rgba(161, 2, 12, 0.5);
+}
+
+/* unvisited link */
+a:link {
+    position: relative;
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #CCC;
+    border-radius: 10px;
+    box-shadow: 0 2px 0 #777;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    background-color: #BBB;
+}
+
+/* selected link */
+a:active {
+    top: 2px;
+    box-shadow: none;
+}
+
+main {
+  width: 400px;
+  height: 300px;
+  border: 1px solid;
+  position: relative;
+}
+
+.dialog {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
