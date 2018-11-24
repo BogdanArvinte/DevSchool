@@ -1,2 +1,3 @@
-# devschool
-{Dev}School
+# {Dev}School
+
+Course material and source code
