@@ -1,0 +1,107 @@
+<template id="template">
+  <style>
+    :root {
+      --greeter-styles: {
+        color: blue;
+      };
+    }
+
+    :host {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: var(--bg-color, #fff);
+    }
+
+    :host([hidden]) {
+      display: none;
+    }
+
+    :host-context(.dark) {
+      background-color: #e65c00;
+    }
+
+    .comment {
+      @apply --greeter-styles;
+    }
+
+    img {
+      max-width: 200px;
+    }
+
+    ::slotted(marquee) {
+      color: green;
+    }
+  </style>
+
+  <img src="" alt="great image">
+  <div class="comment"></div>
+  <slot name="content">Slot Content</slot>
+</template>
+
+<script>
+  const $owner = (document._currentScript || document.currentScript).ownerDocument;
+  const $template = $owner.querySelector('#template');
+
+  // Extend HTMLElement base class
+  class RandomGreeter extends HTMLElement {
+    static get is() { return 'random-greeter' }
+
+    static get observedAttributes() {
+      return ['src'];
+    }
+
+    constructor() {
+      super();
+
+      this._greets = [
+        "Hello, World!",
+        "Hi, Solar System!",
+        "Yo, Galaxy!",
+        "Hey, Universe!"
+      ];
+
+      this._greet = null;
+
+      this.attachShadow({ mode: 'open' });
+    }
+
+    set src(src) {
+      this.shadowRoot.querySelector('img').setAttribute('src', src);
+    }
+
+    connectedCallback() {
+      console.log('random-greeter element added to the DOM!');
+
+      this.shadowRoot.appendChild(document.importNode($template.content, true));
+
+      const src = this.getAttribute('src');
+      this.shadowRoot.querySelector('img').setAttribute('src', src);
+
+      this._timer = setInterval(() => {
+        this._render();
+        this.shadowRoot.querySelector('.comment').innerText = this._greet;
+      }, 2000);
+    }
+
+    disconnectedCallback() {
+      clearInterval(this._timer);
+    }
+
+    _render() {
+      this._greet = this._greets[Math.floor(Math.random()*this._greets.length)];
+    }
+
+    attributeChangedCallback(attrName, oldValue, newValue) {
+      console.log('Attribute Changed!', attrName, oldValue, newValue);
+
+      const img = this.shadowRoot.querySelector('img');
+
+      if (img) {
+        img.setAttribute('src', newValue);
+      }
+    }
+  }
+
+  // Register custom element definition using standard platform API
+  customElements.define(RandomGreeter.is, RandomGreeter);
+</script>

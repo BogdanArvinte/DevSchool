@@ -1,0 +1,25 @@
+{
+  "name": "web-components",
+  "homepage": "https://github.com/marvin89/DevSchool",
+  "authors": [
+    "Bogdan Arvinte <bogdan.arvinte@ing.com>"
+  ],
+  "description": "Polymer",
+  "main": "index.html",
+  "keywords": [
+    "wc",
+    "polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "webcomponentsjs": "webcomponentsjs#^1.0.0"
+  }
+}
